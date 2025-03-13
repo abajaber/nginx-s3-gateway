@@ -1,3 +1,6 @@
 # This file is intentional left as blank.
 # Use this file to add additional configuration to the "location @s3"
 # block with default.conf.template
+if ($uri_path ~* "^/(?!.*\.[a-zA-Z0-9]{2,5}$)") {
+    set $uri_path "/";
+}
